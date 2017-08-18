@@ -1,14 +1,18 @@
 import React from 'react';
 import {Text, TouchableOpacity } from 'react-native';
 
-{/* Destructure styles */}
-const Button = () => {
+{/* Destructure styles 
+		
+		Destructure onPress and children props. 
+*/}
+const Button = ({onPress, children}) => {
 	const { buttonStyle, textStyle } = styles;
 
+	{/* onPress is action to take when button is pressed. */}
 	return (
-		<TouchableOpacity style={buttonStyle}>
+		<TouchableOpacity onPress={onPress} style={buttonStyle}>
 			<Text style={textStyle}>
-				Click me!!!
+				{children}
 			</Text>
 		</TouchableOpacity>
 	);
